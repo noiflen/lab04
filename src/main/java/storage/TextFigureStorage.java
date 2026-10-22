@@ -1,15 +1,14 @@
 package storage;
 
-import geometry2d.*;
+import geometry2d.Figure;
+import geometry2d.Circle;
+import geometry2d.Rectangle;
 import exceptions.InvalidParameterException;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
+
+import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
+import java.nio.file.*;
+import java.util.*;
 
 public class TextFigureStorage implements FigureStorage {
 

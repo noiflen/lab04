@@ -1,11 +1,9 @@
-package app;
-
+package  app;
 import geometry2d.Figure;
 import geometry3d.Cylinder;
 import storage.BinaryFigureStorage;
 import storage.FigureStorage;
 import storage.TextFigureStorage;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -15,8 +13,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // Берем аргументы командной строки или значения по умолчанию
-        String in = args.length > 0 ? args[0] : "src/data/input.txt";
-        String out = args.length > 1 ? args[1] : "src/data/output.bin";
+        String in = args.length > 0 ? args[0] : "data/input.txt";
+        String out = args.length > 1 ? args[1] : "data/output.bin";
 
         FigureStorage textStorage = new TextFigureStorage();
         FigureStorage binStorage = new BinaryFigureStorage();

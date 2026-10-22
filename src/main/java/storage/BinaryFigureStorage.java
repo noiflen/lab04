@@ -1,16 +1,16 @@
 package storage;
 
 import geometry2d.Figure;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
+import geometry2d.Circle;
+import geometry2d.Rectangle;
+import exceptions.InvalidParameterException;
+
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
 
 public class BinaryFigureStorage implements FigureStorage {
-
-    @Override
+@Override
     @SuppressWarnings("unchecked")
     public List<Figure> read(Path path) throws IOException {
         ObjectInputStream in = new ObjectInputStream(Files.newInputStream(path));
