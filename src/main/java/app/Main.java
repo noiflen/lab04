@@ -12,7 +12,6 @@ import java.util.Random;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        // Берем аргументы командной строки или значения по умолчанию
         String in = args.length > 0 ? args[0] : "data/input.txt";
         String out = args.length > 1 ? args[1] : "data/output.bin";
 
@@ -36,10 +35,10 @@ public class Main {
             }
         }
 
-        // Создание цилиндра со случайным основанием
+        // Создание цилиндра
         if (!figures.isEmpty()) {
             Figure randomBase = figures.get(new Random().nextInt(figures.size()));
-            System.out.println("\n--- Создание цилиндра ---");
+            System.out.println("--- Создание цилиндра ---");
             System.out.println("Случайное основание: " + randomBase.getClass().getSimpleName());
 
             Scanner scanner = new Scanner(System.in); // Аналог std::cin
@@ -59,13 +58,11 @@ public class Main {
             System.out.println("Цилиндр: " + cylinder);
             System.out.println("Объем: " + cylinder.volume());
         } else {
-            System.out.println("\nСписок пуст, создание цилиндра пропущено.");
+            System.out.println("Список пуст, создание цилиндра пропущено.");
         }
-
-        // Сохранение в бинарный файл
         try {
             binStorage.write(Paths.get(out), figures);
-            System.out.println("\nСписок успешно сохранен в: " + out);
+            System.out.println("Список успешно сохранен в: " + out);
         } catch (Exception e) {
             System.err.println("Не удалось сохранить: " + e.getMessage());
         }
